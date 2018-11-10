@@ -19,17 +19,17 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
     //     console.log(JSON.stringify(result.ops, undefined, 2));
     // });
 
-    // db.collection('Users').insertOne({
-    //     name: 'Marcos',
-    //     age: 32,
-    //     location: 'São Paulo'
-    // }, (err, result) => {
-    //     if (err) {
-    //         return console.log('Unable to insert User', err);
-    //     }
+    db.collection('Users').insertOne({
+        name: 'Marcos',
+        age: 32,
+        location: 'São Paulo'
+    }, (err, result) => {
+        if (err) {
+            return console.log('Unable to insert User', err);
+        }
 
-    //     console.log(JSON.stringify(result.ops, undefined, 2));
-    // });
+        console.log(JSON.stringify(result.ops, undefined, 2));
+    });
 
     client.close();
 });

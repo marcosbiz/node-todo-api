@@ -9,14 +9,12 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
     const db = client.db('TodoApp');
 
 //    db.collection('Todos').find({completed: false}).toArray().then( (docs) => {
-    // db.collection('Todos').find({
-    //     _id: new ObjectID('5be62132f0962242e40cb19d')
-    // }).toArray().then( (docs) => {
-    //     console.log('Todos');
-    //     console.log(JSON.stringify(docs, undefined, 2));
-    // }, (err) => {
-    //     console.log('Unable to fetch todos', err);
-    // });
+    db.collection('Todos').find().toArray().then( (docs) => {
+        console.log('Todos');
+        console.log(JSON.stringify(docs, undefined, 2));
+    }, (err) => {
+        console.log('Unable to fetch todos', err);
+    });
 
     // db.collection('Todos').find().count().then( (count) => {
     //     console.log(`Todos count: ${count}`);
@@ -24,12 +22,12 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
     //     console.log('Unable to fetch todos', err);
     // });
 
-    db.collection('Users').find({name: 'Marcos'}).toArray().then( (users) => {
-        console.log('Users');
-        console.log(JSON.stringify(users, undefined, 2));
-    }, (err) => {
-        console.log('Unable to fetch Users', err)
-    });
+    // db.collection('Users').find({name: 'Marcos'}).toArray().then( (users) => {
+    //     console.log('Users');
+    //     console.log(JSON.stringify(users, undefined, 2));
+    // }, (err) => {
+    //     console.log('Unable to fetch Users', err)
+    // });
 
     //client.close();
 });
