@@ -70,8 +70,6 @@ app.patch('/todos/:id', (req, res) => {
     const id = req.params.id;
     let body = _.pick(req.body, ['text', 'completed']);
 
-    console.log(body);
-
     if (!ObjectID.isValid(id)) {
         return res.status(404).send();
     }
@@ -90,7 +88,6 @@ app.patch('/todos/:id', (req, res) => {
         res.send({todo});
     }).catch((e) => {
         res.status(400).send();
-        console.log(e);
     });
 });
 
