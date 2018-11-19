@@ -3,4 +3,6 @@
 # dependencies
 /node_modules
 
+/server/config/config.json
+
 npm-debug.log*
